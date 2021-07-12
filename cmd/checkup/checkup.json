@@ -1,0 +1,34 @@
+{
+  "checkers": [
+    {
+      "type": "http",
+      "endpoint_name": "网关服务#10002",
+      "endpoint_url": "http://10.3.200.15:8800/checkup"
+    },
+    {
+      "type": "http",
+      "endpoint_name": "游戏服务#10001",
+      "endpoint_url": "http://10.3.200.15:9090/checkup"
+    },
+    {
+      "type": "http",
+      "endpoint_name": "gm服务#10003",
+      "endpoint_url": "http://127.0.0.1:9988/checkup"
+    }
+  ],
+
+  "storage": {
+    "type": "mysql",
+    "create": true,
+    "dsn": "root:@tcp(10.0.84.114:3306)/checkup"
+  },
+
+  "notifiers": [
+    {
+      "type": "slack",
+      "username": "alert",
+      "channel": "890c1bea-fdf8-4d8c-9856-6c6fb99b71c8",
+      "webhook": "http://127.0.0.1:8701/alert"
+    }
+  ]
+}
